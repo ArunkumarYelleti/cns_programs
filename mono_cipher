@@ -9,7 +9,8 @@ int main() {
     char str[MAX], str1[MAX], str2[MAX];
     char alpha[MAX] = "abcdefghijklmnopqrstuvwxyz";
     printf("\nPlain  Alphabets: %s", alpha);
-    srand(time(NULL));
+    srand(time(NULL)); // Seed the random number generator with the current time
+
     for (i = 25; i > 0; i--) {
         int j = rand() % (i + 1);
         char temp = alpha[i];
