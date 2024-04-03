@@ -1,0 +1,29 @@
+#include <math.h>
+#include <stdio.h>
+long long int power( int a, int b, int P) {
+  if (b == 1)
+    return a;
+  else
+    return ((( int) pow(a, b)) % P);
+}
+int main() {
+     int P, G, x, a, y, b, ka, kb;
+  //P = 23
+  printf("Enter the Value of P: ");
+  scanf("%d", & P);
+  //G = 9;
+  printf("Enter the Value of G: ");
+  scanf("%d", & G);
+  //a = 4;
+  printf("Enter the Private Key of A: ");
+  scanf("%d", & a);
+  x = power(G, a, P);
+  //b = 3; 
+  printf("Enter the Private Key of B: ");
+  scanf("%d", & b);
+  y = power(G, b, P);
+  ka = power(y, a, P);
+  kb = power(x, b, P);
+  printf("Secret key for A is : %d\n", ka);
+  printf("Secret Key for B is : %d\n", kb);
+}
